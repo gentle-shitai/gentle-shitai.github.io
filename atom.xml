@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>师太妙妙屋</title>
+  
+  
+  <link href="http://example.com/atom.xml" rel="self"/>
+  
+  <link href="http://example.com/"/>
+  <updated>2021-05-17T11:59:04.608Z</updated>
+  <id>http://example.com/</id>
+  
+  <author>
+    <name>黄超</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>只需两步，彻底告别“顽固性”广告弹窗</title>
+    <link href="http://example.com/2021/05/17/%E5%8F%AA%E9%9C%80%E4%B8%A4%E6%AD%A5%EF%BC%8C%E5%BD%BB%E5%BA%95%E5%91%8A%E5%88%AB%E2%80%9C%E9%A1%BD%E5%9B%BA%E6%80%A7%E2%80%9D%E5%B9%BF%E5%91%8A%E5%BC%B9%E7%AA%97/"/>
+    <id>http://example.com/2021/05/17/%E5%8F%AA%E9%9C%80%E4%B8%A4%E6%AD%A5%EF%BC%8C%E5%BD%BB%E5%BA%95%E5%91%8A%E5%88%AB%E2%80%9C%E9%A1%BD%E5%9B%BA%E6%80%A7%E2%80%9D%E5%B9%BF%E5%91%8A%E5%BC%B9%E7%AA%97/</id>
+    <published>2021-05-17T11:55:22.000Z</published>
+    <updated>2021-05-17T11:59:04.608Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="弹窗广告万能解决方案"><a href="#弹窗广告万能解决方案" class="headerlink" title="弹窗广告万能解决方案"></a>弹窗广告万能解决方案</h2><p>广告弹窗相比大家日常办公生活中或多或少都会碰到！</p><p>无意间安装了广告软件，或者个别流氓软件，都会让自己电脑中招。</p><p>处理这类弹窗广告，一般将对应的软件卸载便没啥问题了！</p><p>但是，就是有这么些软件（某flash插件），因为工作需要，你还非得用它不行，不能卸载它！</p><p>而这类软件呢，仗着自己的独特地位，不顾用户体验，疯狂向用户电脑发送弹窗广告，比如下面这位！</p><p><img src="https://i.loli.net/2021/05/16/74MwbAZLExuhImn.png"></p><p>大家看看火绒弹窗拦截的记录，377次，弹出位置都在中间位置，简直丧心病狂！</p><p>虽然说火绒的拦截还是有作用，但是该弹窗仍会在屏幕一闪而过，每次重新开机必现弹窗。</p><p><img src="https://i.loli.net/2021/05/16/LpVvrsqQ5eoCMnm.png"></p><p>本文以这 Flash 类的“顽固性”弹窗广告为例，手把手教大家去除广告弹窗，还电脑一片清净！</p><p>本方法适用于绝大部分弹窗广告！</p><h2 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h2><ol><li>定位广告弹窗进程；</li><li>删除执行该进程的程序文件；</li></ol><p>每个弹窗广告在系统后台都对应着某一个进程，杀死改进程，便能关闭该弹窗广告，这也是大部分弹窗拦截工具的工作原理！</p><p>但我们想要彻底告别弹窗，需要找到并删除执行该进程的程序文件。</p><p>本文将会用到如下两个小工具，<strong>进程资源管理器 (Process Explorer)</strong>  和 <strong>IObit Unlocker</strong>。</p><p><img src="https://i.loli.net/2021/05/16/8ARYHidsfbxu95K.png"></p><p><a href="https://docs.microsoft.com/en-us/sysinternals/downloads/process-explorer">进程资源管理器 (Process Explorer)</a> 可以将它当作一个加强版的Windows任务资源管理器，用来帮助我们快速定位弹窗进程位置信息；</p><p> <a href="https://www.majorgeeks.com/files/details/iobit_unlocker.html">IObit Unlocker</a>是一个旨在解决“无法删除”或“访问被拒绝”问题的一个小巧工具，适用于找到了弹窗进程软件但无法删除的局面。</p><blockquote><p>戳 <a href="https://wwa.lanzoui.com/b0c3cylkd">这里</a> 获取工具 蓝奏云密码：b5z3</p></blockquote><p>结合以上两个小工具，以之前提到的 Flash 广告为例，进行如下去除弹窗操作：</p><h2 id="第一步：定位弹窗进程"><a href="#第一步：定位弹窗进程" class="headerlink" title="第一步：定位弹窗进程"></a>第一步：定位弹窗进程</h2><p>弹窗出现后，打开 Process Explorer 工具，找到“Find windows process” 图标；</p><p><img src="https://i.loli.net/2021/05/16/Db2UE6OX15AtrZu.png"></p><p>鼠标左键点击“Find windows process” 图标，并移动到弹窗广告界面；该工具便会自动定位到弹窗进程，发现是名为 “Flash Helper Service” 的进程；</p><p>鼠标右键选中该进程，点击“kill process”杀死进程，之后选择“properties”；</p><p><img src="https://i.loli.net/2021/05/16/DgiykKC5P6lIF1t.png"></p><p>在弹出的窗口中，点击“Explore”，这样就进入了执行该进程的可执行文件目录；</p><p><img src="https://i.loli.net/2021/05/16/sKiZhrGp6owVYPU.png"></p><p>进入文件目录后，选择该程序进行删除，发现弹出“文件正在使用”窗口，无法进行删除！</p><p><img src="https://i.loli.net/2021/05/16/sofKuNAIQRDSYFn.png"></p><p>不清楚具体操作的可以看下面的 GIF 演示图。</p><p><img src="https://i.loli.net/2021/05/16/T8D2ojdwzHia4p3.gif"></p><p>上网查询之后，发现之所以杀死了该弹窗进程但仍然无法删除其文件的原因是，该程序的某类服务一直在后台运行，并没有真正被杀死，而该服务并不会显示在进程管理视图中！</p><p><img src="https://i.loli.net/2021/05/17/anEhSduK1H4J3ZA.png"></p><p>找到了原因，就好办了，将该服务停止，再执行删除操作即可！</p><p>如上操作还需要用户找到对应的本地后台服务，稍显麻烦！</p><p>但还有更简单的操作，这是需要第二个小工具帮忙了。</p><p>###第二步：解锁关联进程，执行删除</p><p>下载安装  <strong>IObit Unlocker</strong> 后，直接针对之前找到的执行弹窗程序鼠标右键，选择  IObit Unlocker；</p><p><img src="https://i.loli.net/2021/05/16/9lZCnb2kR6iuoLQ.png"></p><p> <strong>IObit Unlocker</strong> 软件会自动识别当前文件或者文件夹被系统中的何种进程所占用；</p><p>此时，只需点击中间的 解锁 按钮旁的倒三角符号，选择“解锁&amp;删除”，这样就可以一键强力去除该文件，搞定收工！</p><p><img src="https://i.loli.net/2021/05/16/kaS6N5z9gs2LAuD.png"></p><p>此外，这个工具本人强推，真的挺好用，解除对常见的文件/文件夹被占用情况非常有帮助！</p><p>常见的U盘占用情况，火绒处理不了的，这个工具也能搞定！</p><p><img src="https://i.loli.net/2021/05/16/wcd9BfnpgseO1io.png"></p><p>本文到此结束，相信掌握如上方法，再顽固的广告弹窗也能手到病除！</p><p>觉得有帮助的话，还请大家高抬贵手，点个赞，谢谢啦！</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h2 id=&quot;弹窗广告万能解决方案&quot;&gt;&lt;a href=&quot;#弹窗广告万能解决方案&quot; class=&quot;headerlink&quot; title=&quot;弹窗广告万能解决方案&quot;&gt;&lt;/a&gt;弹窗广告万能解决方案&lt;/h2&gt;&lt;p&gt;广告弹窗相比大家日常办公生活中或多或少都会碰到！&lt;/p&gt;
+&lt;p&gt;无意间安装了</summary>
+      
+    
+    
+    
+    
+    <category term="软件技巧" scheme="http://example.com/tags/%E8%BD%AF%E4%BB%B6%E6%8A%80%E5%B7%A7/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Markdown 写作技巧 ——Sharex工作流</title>
+    <link href="http://example.com/2021/05/15/ShareX+%E5%9B%BE%E5%BA%8A%E8%AE%BE%E7%BD%AE/"/>
+    <id>http://example.com/2021/05/15/ShareX+%E5%9B%BE%E5%BA%8A%E8%AE%BE%E7%BD%AE/</id>
+    <published>2021-05-14T16:00:00.000Z</published>
+    <updated>2021-05-15T06:20:28.801Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="ShareX-图床设置"><a href="#ShareX-图床设置" class="headerlink" title="ShareX+图床设置"></a>ShareX+图床设置</h2><h3 id="实现目标"><a href="#实现目标" class="headerlink" title="实现目标"></a>实现目标</h3><p>使用sharex工具截图后，截图自动保存到本地文件夹，并自动上传到自定义图床，并复制上传后的图片链接。</p><h3 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h3><ul><li><a href="https://getsharex.com/">ShareX</a> 下载安装；</li><li>注册 <a href="https://sm.ms/home/apitoken">SM.MS </a> 账号；</li></ul><h3 id="01-获取SM-MS-token"><a href="#01-获取SM-MS-token" class="headerlink" title="01 获取SM.MS token"></a>01 获取SM.MS token</h3><p>注册并登录SM.MS，进入个人界面，生成 Secret Token；记住这串数字，一会需要用！</p><p><img src="https://i.loli.net/2021/05/15/4fuNjJ5VP7YWd1L.png" alt="SmmsToken"></p><h3 id="02-ShareX-设置"><a href="#02-ShareX-设置" class="headerlink" title="02 ShareX 设置"></a>02 ShareX 设置</h3><p>首先，选择“截图后的动作”，确保“保存图片文件”、“上传图片”选项已被勾选；</p><p><img src="https://i.loli.net/2021/05/15/7MuaTVtChrUxwzi.png"></p><p>选择“上传后的动作”，勾选“URL复制到剪贴板”；</p><p><img src="https://i.loli.net/2021/05/15/NcCBKIOvWoR3PVt.png"></p><p>最后，点击“目标”，将图片上传设置为“自定义图像上传”，之后再点击“自定义上传目标”；</p><p><img src="https://i.loli.net/2021/05/15/vsHzxS2EYR5KMpD.png"></p><p>进入自定义上传设置界面后，复制如下代码，点击“导入”-&gt;“从剪贴板”，在右边的“authorization”值输入之前生成的 token，将右上角的上传目标类型设置为“图像上传“；</p><figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">     <span class="attr">&quot;Version&quot;</span>: <span class="string">&quot;13.0.1&quot;</span>,</span><br><span class="line">     <span class="attr">&quot;Name&quot;</span>: <span class="string">&quot;sm.ms v2&quot;</span>,</span><br><span class="line">     <span class="attr">&quot;DestinationType&quot;</span>: <span class="string">&quot;ImageUploader&quot;</span>,</span><br><span class="line">     <span class="attr">&quot;RequestMethod&quot;</span>: <span class="string">&quot;POST&quot;</span>,</span><br><span class="line">     <span class="attr">&quot;RequestURL&quot;</span>: <span class="string">&quot;https://sm.ms/api/v2/upload&quot;</span>,</span><br><span class="line">     <span class="attr">&quot;Headers&quot;</span>: &#123;</span><br><span class="line">     <span class="attr">&quot;Authorization&quot;</span>: <span class="string">&quot;这里写后台面板的API Token&quot;</span></span><br><span class="line">     &#125;,</span><br><span class="line">     <span class="attr">&quot;Body&quot;</span>: <span class="string">&quot;MultipartFormData&quot;</span>,</span><br><span class="line">     <span class="attr">&quot;Arguments&quot;</span>: &#123;</span><br><span class="line">     <span class="attr">&quot;format&quot;</span>: <span class="string">&quot;json&quot;</span></span><br><span class="line">     &#125;,</span><br><span class="line">     <span class="attr">&quot;FileFormName&quot;</span>: <span class="string">&quot;smfile&quot;</span>,</span><br><span class="line">     <span class="attr">&quot;URL&quot;</span>: <span class="string">&quot;$json:data.url$&quot;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p><img src="https://i.loli.net/2021/05/15/n89PvctyHQ6TeKl.png"></p><p>至此，设置完成；</p><p>非常好用的工作流程！</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h2 id=&quot;ShareX-图床设置&quot;&gt;&lt;a href=&quot;#ShareX-图床设置&quot; class=&quot;headerlink&quot; title=&quot;ShareX+图床设置&quot;&gt;&lt;/a&gt;ShareX+图床设置&lt;/h2&gt;&lt;h3 id=&quot;实现目标&quot;&gt;&lt;a href=&quot;#实现目标&quot; class=&quot;</summary>
+      
+    
+    
+    
+    
+    <category term="效率工具" scheme="http://example.com/tags/%E6%95%88%E7%8E%87%E5%B7%A5%E5%85%B7/"/>
+    
+    <category term="Markdown写作" scheme="http://example.com/tags/Markdown%E5%86%99%E4%BD%9C/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Hello World</title>
+    <link href="http://example.com/2021/05/13/hello-world/"/>
+    <id>http://example.com/2021/05/13/hello-world/</id>
+    <published>2021-05-13T09:05:23.051Z</published>
+    <updated>2021-05-13T09:05:23.051Z</updated>
+    
+    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.io/docs/&quot;&gt;documentation&lt;/a&gt; for</summary>
+      
+    
+    
+    
+    
+  </entry>
+  
+</feed>
